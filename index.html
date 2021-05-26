@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <header>
     <meta charset="UTF-8" />
     <title>Hello World!</title>
     <meta
       http-equiv="Content-Security-Policy"
       content="script-src 'self' 'unsafe-inline';"
     />
-  </head>
-  <body style="background: white">
-    <h1>Hello World!</h1>
+    <script src="./data.js" type="javascript/text" defer></script>
+  </header>
+  <body style="background: white; -webkit-app-region: drag">
+    <h1>System Info</h1>
     <p>
       We are using Node.js <span id="node-version"></span>, Chromium
       <span id="chrome-version"></span>, and Electron
@@ -18,7 +19,9 @@
 
     <div class="system-area">
       <p class="got-memory"></p>
-      <p class="got-"
+      <p class="got-CPU"></p>
+      <p class="got-cpu-count"></p>
+      <canvas id="myStats" width="25" height="25"></canvas>
     </div>
   </body>
 </html>

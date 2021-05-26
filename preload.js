@@ -1,9 +1,11 @@
-const os = require("os");
+const os = require("os-utils");
 const freeMem = os.freemem();
 const totalMem = os.totalmem();
-const freeMemMB = freeMem * 0.00000095367432;
-const totalMemMB = totalMem * 0.00000095367432;
-const cpuType = os.cpus();
+const freeMemMB = freeMem;
+const totalMemMB = totalMem;
+os.cpuUsage(function (v) {
+  document.querySelector(".got-CPU").innerHTML = "CPU Usage (%): " + v;
+});
 
 window.addEventListener("DOMContentLoaded", () => {
   const replaceText = (selector, text) => {
@@ -15,9 +17,11 @@ window.addEventListener("DOMContentLoaded", () => {
     replaceText(`${type}-version`, process.versions[type]);
   }
 
-  const message = `Your current free memory is: ${freeMemMB.toFixed(
+  const messageMemory = `Your current free memory is: ${freeMemMB.toFixed(
     2
   )} MB / ${totalMemMB.toFixed(2)} MB`;
-  document.querySelector(".got-memory").innerHTML = message;
-  console.log(...cpuType);
+  document.querySelector(".got-memory").innerHTML = messageMemory;
+  document.querySelector(
+    ".got-cpu-count"
+  ).innerHTML = `Your CPU has a thread count of: ${os.cpuCount()}`;
 });

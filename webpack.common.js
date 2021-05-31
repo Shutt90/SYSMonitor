@@ -1,8 +1,10 @@
-const path = require("path");
+var path = require("path");
+var webpack = require("webpack");
+var Chart = require("chart.js");
 
 module.exports = {
   mode: "development",
-  entry: "/main.js",
+  entry: ["/main.js", "/data.js"],
   devtool: "inline-source-map",
   target: "electron-renderer",
   module: {

@@ -1,5 +1,3 @@
-import Chart from "chart.js/auto";
-
 const labels = ["Memory Used", "Memory Free"];
 const data = {
   labels: labels,
@@ -19,4 +17,4 @@ const config = {
   options: {},
 };
 
-var myChart = new Chart(document.getElementById("myStats"), config);
+var myChart = new Chart(document.getElementById("myRam"), config);

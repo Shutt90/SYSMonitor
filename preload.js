@@ -3,6 +3,11 @@ const freeMem = os.freemem();
 const totalMem = os.totalmem();
 const freeMemMB = freeMem;
 const totalMemMB = totalMem;
+
+try {
+  require("electron-reloader")(module);
+} catch (_) {}
+
 os.cpuUsage(function (v) {
   document.querySelector(".got-CPU").innerHTML = "CPU Usage (%): " + v;
 });

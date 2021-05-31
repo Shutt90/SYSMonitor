@@ -2,26 +2,53 @@
 <html>
   <header>
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
+    <title>System Info</title>
     <meta
       http-equiv="Content-Security-Policy"
       content="script-src 'self' 'unsafe-inline';"
     />
-    <script src="./data.js" type="javascript/text" defer></script>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- <script src="./data.js" type="javascript/text" defer></script> -->
   </header>
-  <body style="background: white; -webkit-app-region: drag">
-    <h1>System Info</h1>
-    <p>
-      We are using Node.js <span id="node-version"></span>, Chromium
-      <span id="chrome-version"></span>, and Electron
-      <span id="electron-version"></span>.
-    </p>
+  <body>
+      <nav class="nav-bar">
 
-    <div class="system-area">
-      <p class="got-memory"></p>
-      <p class="got-CPU"></p>
-      <p class="got-cpu-count"></p>
-      <canvas id="myStats" width="25" height="25"></canvas>
-    </div>
+          <a href="#" class="nav-link">
+            <img class="nav-item" src="./icons-resized/tasks-solid.svg" alt="Tasks"/>
+        </a>
+
+
+          <a href="#" class="nav-link">
+            <img class="nav-item" src="./icons-resized/microchip-solid.svg" alt="Usage"/>
+        </a>
+
+          <a href="#" class="nav-link">
+              <img class="nav-item" src="./icons-resized/thermometer-quarter-solid.svg" alt="Temps"/>
+          </a>
+
+
+          <a href="#" class="nav-link">
+            <img class="nav-item" src="./icons-resized/microchip-solid.svg" alt="Refresh"/>
+        </a>
+
+
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <h1>System Info</h1>
+      <p>
+        We are using Node.js <span id="node-version"></span>, Chromium
+        <span id="chrome-version"></span>, and Electron
+        <span id="electron-version"></span>.
+      </p>
+
+      <div class="system-area">
+        <p class="got-memory"></p>
+        <p class="got-CPU"></p>
+        <p class="got-cpu-count"></p>
+        <canvas id="myRam" width="25px" height="25px"></canvas>
+      </div>
+    </main>
   </body>
 </html>

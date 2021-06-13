@@ -1,18 +1,30 @@
-const { app, BrowserWindow } = require("electron");
+const {
+  app,
+  BrowserWindow,
+  getCurrentWindow,
+  globalShortcut,
+} = require("electron");
+
 try {
   require("electron-reloader")(module);
 } catch (_) {}
 
 const path = require("path");
 
+var reload = () => {
+  getCurrentWindow().reload();
+};
+
 function createWindow() {
   const win = new BrowserWindow({
     width: 800,
     height: 500,
     frame: false,
-    resizeable: true,
+    resizeable: false,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
+      fullscreen: false,
+      devTools: true,
     },
   });
 

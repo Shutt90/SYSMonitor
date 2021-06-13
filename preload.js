@@ -1,4 +1,5 @@
 const os = require("os-utils");
+const si = require("systeminformation");
 const freeMem = os.freemem();
 const totalMem = os.totalmem();
 const freeMemMB = freeMem;
@@ -30,3 +31,19 @@ window.addEventListener("DOMContentLoaded", () => {
     ".got-cpu-count"
   ).innerHTML = `Your CPU has a thread count of: ${os.cpuCount()}`;
 });
+
+// 1. Reload Functionality On Button and Key Press
+// document.querySelector(".thishere").addEventListener("click", createWindow);
+
+// function createWindow() {
+//   globalShortcut.register("f5", function () {
+//     console.log("f5 is pressed");
+//     mainWindow.reload();
+//   });
+//   globalShortcut.register("CommandOrControl+R", function () {
+//     console.log("CommandOrControl+R is pressed");
+//     mainWindow.reload();
+//   });
+// }
+
+// 2. Implement if currentPage = Navbar current, background = black

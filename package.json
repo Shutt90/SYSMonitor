@@ -27,6 +27,7 @@
     "webpack-cli": "^4.7.0"
   },
   "dependencies": {
-    "chart.js": "^3.3.0"
+    "chart.js": "^3.3.0",
+    "systeminformation": "^5.7.4"
   }
 }
